@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/categoryFragment">
+
+    <fragment
+        android:id="@+id/categoryFragment"
+        android:name="com.example.onigo.ui.category.CategoryFragment"
+        android:label="@string/category_fragment_label"
+        tools:layout="@layout/fragment_category">
+
+<!--        FIXME: add action-->
+<!--            <action-->
+<!--                android:id="@+id/action"-->
+<!--                app:destination="@id/ProductFragment" />-->
+    </fragment>
+    <fragment
+        android:id="@+id/ProductFragment"
+        android:name="com.example.onigo.ui.product.ProductFragment"
+        android:label="@string/product_fragment_label"
+        tools:layout="@layout/fragment_product">
+
+<!--        FIXME: add action-->
+<!--            <action-->
+<!--                android:id="@+id/action"-->
+<!--                app:destination="@id/categoryFragment" />-->
+    </fragment>
+</navigation>
