@@ -1,10 +1,11 @@
 <resources>
     <string name="app_name">OniGO</string>
-    <string name="action_settings">Settings</string><!--    FIXME: remove-->
 
     <string name="category_fragment_label">Category Fragment</string>
     <string name="product_fragment_label">Product Fragment</string>
 
     <string name="splash">OniGO</string>
     <string name="category_title">お取り扱い商品</string>
+
+    <string name="currency">円</string>
 </resources>
