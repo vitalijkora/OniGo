@@ -1,9 +1,6 @@
 package com.example.onigo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
-import android.util.Log
 
 import com.example.onigo.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint

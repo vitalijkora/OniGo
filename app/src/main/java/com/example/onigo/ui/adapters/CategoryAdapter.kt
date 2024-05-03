@@ -40,11 +40,11 @@ class CategoryAdapter: RecyclerView.Adapter<CategoryAdapter.NewsViewHolder>() {
             Glide.with(this).load(product_tile.image).into(product_tile_image)
             product_tile_image.clipToOutline = true
             product_tile_title.text = product_tile.title
-            product_tile_price.text = String.format(Locale.JAPAN, "%d", product_tile.price)
+            product_tile_price.text = String.format(Locale.JAPAN, "%,d", product_tile.price)
             product_tile_price_with_tax.text=String.format(Locale.JAPAN, "%,d", Math.round(product_tile.priceWithTax))
             product_tile_unit.text=product_tile.unit.toString()
             setOnClickListener {
-//                onItemClickListener?.let { it(product_tile) }
+               onProductClickListener?.let { it(product_tile.productId) }
             }
         }
     }
@@ -53,10 +53,10 @@ class CategoryAdapter: RecyclerView.Adapter<CategoryAdapter.NewsViewHolder>() {
         return differ.currentList.size
     }
 
-//    private var onItemClickListener: (()? = null
-//
-//    fun setOnItemClickListener(listener: () -> Unit) {
-//        onItemClickListener = listener
-//    }
+    private var onProductClickListener: ((String) -> Unit)? = null
+
+    fun setOnItemClickListener(listener: (String) -> Unit) {
+        onProductClickListener = listener
+    }
 
 }

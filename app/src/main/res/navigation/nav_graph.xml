@@ -10,21 +10,21 @@
         android:name="com.example.onigo.ui.category.CategoryFragment"
         android:label="@string/category_fragment_label"
         tools:layout="@layout/fragment_category">
-
-<!--        FIXME: add action-->
-<!--            <action-->
-<!--                android:id="@+id/action"-->
-<!--                app:destination="@id/ProductFragment" />-->
+        <action
+            android:id="@+id/action_categoryFragment_to_ProductFragment"
+            app:destination="@id/ProductFragment"
+            app:exitAnim="@anim/anim_slide_out_left"
+            app:enterAnim="@anim/anim_slide_in_left"
+            app:popExitAnim="@anim/anim_slide_out_right"
+            app:popEnterAnim="@anim/anim_slide_in_right"/>
     </fragment>
     <fragment
         android:id="@+id/ProductFragment"
         android:name="com.example.onigo.ui.product.ProductFragment"
         android:label="@string/product_fragment_label"
         tools:layout="@layout/fragment_product">
-
-<!--        FIXME: add action-->
-<!--            <action-->
-<!--                android:id="@+id/action"-->
-<!--                app:destination="@id/categoryFragment" />-->
+        <argument
+            android:name="product_id"
+            app:argType="string" />
     </fragment>
 </navigation>
