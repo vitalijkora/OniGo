@@ -5,11 +5,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.fragment.app.viewModels
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.onigo.utils.Resource
 import com.example.onigo.databinding.FragmentCategoryBinding
 import com.example.onigo.ui.adapters.CategoryAdapter
+import com.example.onigo.R
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_category.category_adapter
 import kotlinx.android.synthetic.main.fragment_category.pag_progress_bar
@@ -36,13 +39,13 @@ class CategoryFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
                 initAdapter()
 
-//        categoryAdapter.setOnItemClickListener {
-//            val bundle = bundleOf("article" to it)
-//            view.findNavController().navigate(
-//                R.id.action_mainFragment_to_detailsFragment,
-//                bundle
-//            )
-//        }
+        categoryAdapter.setOnItemClickListener {
+            val bundle = bundleOf("product_id" to it)
+            view.findNavController().navigate(
+                R.id.action_categoryFragment_to_ProductFragment,
+                bundle
+            )
+        }
 
         viewModel.categoriesData.observe(viewLifecycleOwner) { response ->
             when(response) {
