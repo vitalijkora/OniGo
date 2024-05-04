@@ -5,7 +5,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/background">
-
     <LinearLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
@@ -22,7 +21,6 @@
             android:layout_marginHorizontal="@dimen/lMargin"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
-
         <LinearLayout
             android:id="@+id/product_tile_info"
             android:layout_width="match_parent"
@@ -32,8 +30,7 @@
             android:layout_marginRight="@dimen/lMargin"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/product_tile_image"
-            >
+            app:layout_constraintStart_toEndOf="@+id/product_tile_image">
             <TextView
                 android:id="@+id/product_tile_title"
                 android:layout_marginBottom="@dimen/sMargin"
@@ -44,7 +41,7 @@
                 android:textStyle="bold"
                 android:ellipsize="end"
                 android:maxLines="2"
-                tools:text="title" />
+                tools:text="title"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -60,7 +57,7 @@
                         android:layout_height="wrap_content"
                         android:textColor="@color/greyText"
                         android:textSize="10sp"
-                        tools:text="unit" />
+                        tools:text="unit"/>
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -72,7 +69,7 @@
                             android:textColor="@color/primary"
                             android:textSize="20sp"
                             android:textStyle="bold"
-                            tools:text="price" />
+                            tools:text="price"/>
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -80,20 +77,20 @@
                             android:layout_marginRight="@dimen/sMargin"
                             android:textSize="12sp"
                             android:textStyle="bold"
-                            android:text="@string/currency" />
+                            android:text="@string/currency"/>
                         <TextView
                             android:id="@+id/product_tile_price_with_tax"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textColor="@color/greyText"
                             android:textSize="10sp"
-                            tools:text="price" />
+                            tools:text="price"/>
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textColor="@color/greyText"
                             android:textSize="6sp"
-                            android:text="@string/currency" />
+                            android:text="@string/currency"/>
                     </LinearLayout>
                 </LinearLayout>
                 <LinearLayout
@@ -111,8 +108,7 @@
                         android:textColor="@color/white"
                         android:text="+"
                         android:padding="0dp"
-                        android:textSize="24sp"
-                        />
+                        android:textSize="24sp"/>
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>

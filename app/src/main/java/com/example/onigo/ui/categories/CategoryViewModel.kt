@@ -1,4 +1,4 @@
-package com.example.onigo.ui.category
+package com.example.onigo.ui.categories
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -6,30 +6,28 @@ import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import com.example.onigo.data.api.ApiRepository
-import com.example.onigo.models.CategoryResponse
+import com.example.onigo.models.Product
 import com.example.onigo.utils.Resource
 import javax.inject.Inject
 
 @HiltViewModel
 class CategoryViewModel @Inject constructor(private val repository: ApiRepository): ViewModel() {
 
-    val categoriesData: MutableLiveData<Resource<CategoryResponse>> = MutableLiveData()
+    val categoriesData: MutableLiveData<Resource<Map<String, List<Product>>>> = MutableLiveData()
 
     init {
         getCategory()
     }
 
-    fun getCategory() = viewModelScope.launch {
-        val response = repository.getCategory()
+    private fun getCategory() = viewModelScope.launch {
         repository.getCategory().let {
-            if (response.isSuccessful) {
-                response.body().let { res ->
+            if (it.isSuccessful) {
+                it.body().let { res ->
                     categoriesData.postValue(Resource.Success(res))
                 }
             } else {
-                categoriesData.postValue(Resource.Error(message = response.message()))
+                categoriesData.postValue(Resource.Error(message = it.message()))
             }
         }
     }
-
 }

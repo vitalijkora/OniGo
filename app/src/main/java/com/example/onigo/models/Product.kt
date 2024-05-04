@@ -1,6 +1,6 @@
 package com.example.onigo.models
 
-data class 薬味香味野菜(
+data class Product(
     val adult: Boolean,
     val amount: Int,
     val categories: List<String>,
@@ -8,14 +8,14 @@ data class 薬味香味野菜(
     val image: String,
     val imageIds: List<String>,
     val live: Boolean,
-    val max: Int,
+    val max: Any,
     val noDiscount: Boolean,
     val price: Int,
     val pricePerWeight: Any,
     val pricePerWeightUnit: Any,
     val priceWithTax: Double,
     val productId: String,
-    val tags: List<Any>,
+    val tags: List<String>,
     val tax: Double,
     val temperature: String,
     val title: String,
