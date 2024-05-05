@@ -3,5 +3,4 @@
     <dimen name="sMargin">8dp</dimen>
     <dimen name="mMargin">12dp</dimen>
     <dimen name="lMargin">16dp</dimen>
-    <dimen name="xlMargin">24dp</dimen>
 </resources>

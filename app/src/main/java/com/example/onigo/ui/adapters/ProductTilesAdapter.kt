@@ -1,6 +1,5 @@
 package com.example.onigo.ui.adapters
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.View
@@ -14,9 +13,6 @@ import com.example.onigo.models.Product
 import kotlinx.android.synthetic.main.product_tile.view.*
 import java.util.Locale
 
-private fun View.onTouchEvent(itemView: View, function: () -> Unit) {
-
-}
 
 class ProductTilesAdapter(
     private val productTiles: List<Product>

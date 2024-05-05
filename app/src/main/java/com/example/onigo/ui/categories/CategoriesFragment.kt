@@ -19,7 +19,7 @@ class CategoriesFragment : Fragment() {
     private var _binding: FragmentCategoriesBinding? = null
     private val mBinding get() = _binding!!
 
-    private val viewModel by viewModels<CategoryViewModel>()
+    private val viewModel by viewModels<CategoriesViewModel>()
     private lateinit var categoriesAdapter: CategoriesAdapter
 
     override fun onCreateView(

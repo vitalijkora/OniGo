@@ -1,7 +1,6 @@
 package com.example.onigo.ui.product
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.View
@@ -12,7 +11,6 @@ import androidx.navigation.fragment.navArgs
 import com.example.onigo.databinding.FragmentProductBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_product.back_button
-import kotlinx.android.synthetic.main.product_tile.view.container
 
 @AndroidEntryPoint
 class ProductFragment : Fragment() {

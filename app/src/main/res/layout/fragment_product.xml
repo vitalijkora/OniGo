@@ -50,7 +50,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:fontFamily="@font/arial_rounded_mt_bold"
-                android:text="About project"
+                android:text="@string/about"
                 android:textColor="@color/greyText"
                 android:textSize="14sp"
                 android:layout_marginTop="@dimen/lMargin"/>
