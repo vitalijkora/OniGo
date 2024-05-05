@@ -11,16 +11,16 @@ import com.example.onigo.utils.Resource
 import javax.inject.Inject
 
 @HiltViewModel
-class CategoryViewModel @Inject constructor(private val repository: ApiRepository): ViewModel() {
+class CategoriesViewModel @Inject constructor(private val repository: ApiRepository): ViewModel() {
 
     val categoriesData: MutableLiveData<Resource<Map<String, List<Product>>>> = MutableLiveData()
 
     init {
-        getCategory()
+        getCategories()
     }
 
-    private fun getCategory() = viewModelScope.launch {
-        repository.getCategory().let {
+    private fun getCategories() = viewModelScope.launch {
+        repository.getCategories().let {
             if (it.isSuccessful) {
                 it.body().let { res ->
                     categoriesData.postValue(Resource.Success(res))

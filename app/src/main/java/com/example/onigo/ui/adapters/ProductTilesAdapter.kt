@@ -1,6 +1,7 @@
 package com.example.onigo.ui.adapters
 
 import android.view.LayoutInflater
+import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
@@ -12,9 +13,39 @@ import com.example.onigo.models.Product
 import kotlinx.android.synthetic.main.product_tile.view.*
 import java.util.Locale
 
+
 class ProductTilesAdapter(
-    private val products: List<Product>
+    private val productTiles: List<Product>
 ) : RecyclerView.Adapter<ProductTilesAdapter.ProductTilesViewHolder>() {
+    inner class ProductTilesViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        init {
+            itemView.setOnClickListener {
+                val position = adapterPosition
+                val productTile = productTiles[adapterPosition]
+                if (position != RecyclerView.NO_POSITION) {
+                    val bundle = bundleOf("product_id" to productTile.productId)
+                    it.findNavController().navigate(
+                        R.id.action_categoriesFragment_to_ProductFragment,
+                        bundle
+                    )
+                }
+            }
+            itemView.setOnTouchListener {item, motionEvent ->
+                when (motionEvent.action) {
+                    MotionEvent.ACTION_DOWN -> {
+                        itemView.container.alpha= 0.6F
+                    }
+                    MotionEvent.ACTION_CANCEL ->{
+                        itemView.container.alpha= 1F
+                    }
+                    MotionEvent.ACTION_UP -> {
+                        item.performClick()
+                    }
+                }
+                true
+            }
+        }
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductTilesViewHolder {
         val view = LayoutInflater.from(parent.context)
@@ -23,7 +54,7 @@ class ProductTilesAdapter(
     }
 
     override fun onBindViewHolder(holder: ProductTilesViewHolder, position: Int) {
-        val productTile = products[position]
+        val productTile = productTiles[position]
         holder.itemView.apply {
             Glide.with(this).load(productTile.image).into(product_tile_image)
             product_tile_image.clipToOutline = true
@@ -31,18 +62,11 @@ class ProductTilesAdapter(
             product_tile_price.text = String.format(Locale.JAPAN, "%,d", productTile.price)
             product_tile_price_with_tax.text=String.format(Locale.JAPAN, "%,d", Math.round(productTile.priceWithTax))
             product_tile_unit.text=productTile.unit
-            setOnClickListener {
-               val bundle = bundleOf("product_id" to productTile.productId)
-                it.findNavController().navigate(
-                  R.id.action_categoriesFragment_to_ProductFragment,
-                    bundle
-                )
-            }
         }
     }
 
-    override fun getItemCount(): Int = products.size
-    class ProductTilesViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
+    override fun getItemCount(): Int = productTiles.size
+
 }
 
 

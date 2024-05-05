@@ -12,20 +12,27 @@
         tools:ignore="MissingConstraints">
             <TextView
                 android:id="@+id/section_title"
-                android:layout_marginBottom="@dimen/sMargin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingVertical="@dimen/mMargin"
+                android:paddingHorizontal="@dimen/lMargin"
+                android:background="@color/background_secondary"
                 android:textColor="@color/text"
-                android:textSize="15sp"
+                android:textSize="18sp"
                 android:textStyle="bold"
                 android:ellipsize="end"
                 android:maxLines="1"
                 tools:text="title" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grey"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="parent" />
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/product_tiles_adapter"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
                 android:clipToPadding="false"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

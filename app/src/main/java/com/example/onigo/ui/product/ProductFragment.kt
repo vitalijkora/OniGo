@@ -2,6 +2,7 @@ package com.example.onigo.ui.product
 
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
@@ -32,6 +33,20 @@ class ProductFragment : Fragment() {
 
         back_button.setOnClickListener {
             findNavController().popBackStack()
+        }
+        back_button.setOnTouchListener {item, motionEvent ->
+            when (motionEvent.action) {
+                MotionEvent.ACTION_DOWN -> {
+                    back_button.alpha= 0.6F
+                }
+                MotionEvent.ACTION_CANCEL ->{
+                    back_button.alpha= 1F
+                }
+                MotionEvent.ACTION_UP -> {
+                    item.performClick()
+                }
+            }
+            true
         }
         productIdArg.let { id ->
             mBinding.productId.text = "Product Id: \"$id\""

@@ -4,8 +4,25 @@
     <string name="category_fragment_label">Category Fragment</string>
     <string name="product_fragment_label">Product Fragment</string>
 
+    <string name="currency">円</string>
+
     <string name="splash">OniGO</string>
     <string name="category_title">お取り扱い商品</string>
+    <string name="about">
+        1. Test task for OniGo:\n\n
+Create an application for Android using Kotlin, display products on the main screen using the API.\n\n
+for the list:\n\n
+https://api.onigo.club/first_store_id/cat_v2/野菜\n\n
+for pictures:\n\n
+https://static-server-a-static.pro.onigo.co.jp/onigo/\n\n
+On pressing on a product tile, should navigate to an additional screen from which it`s possible to return back.\n\n\n
+        2. Solution:\n\n
+For API requests the Retrofit and OkHttpClient libraries were used.\n\n
+Navigation, loading state (ProgressBar) and lists (RecyclerView) are default.\n\n\n
+        3. What can be improved:\n\n
+Configure image caching.\n\n
+Upgrade compileSdk from 33 to 34, at the same time migrate from Kotlin synthetics to Jetpack view binding.
+    </string>
 
-    <string name="currency">円</string>
+
 </resources>

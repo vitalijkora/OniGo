@@ -9,5 +9,5 @@ import retrofit2.http.GET
 interface ApiService {
     @GET(CATEGORY_URL + DEFAULT_CATEGORY)
 
-    suspend fun getCategory():Response<Map<String, List<Product>>>
+    suspend fun getCategories():Response<Map<String, List<Product>>>
 }
